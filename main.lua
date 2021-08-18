@@ -1,4 +1,7 @@
-
+-- 
+-- by: kogtyv
+-- приложение создано мной
+-- 
 -- Импорт библиотек и переменные
 local GUI = require("GUI")
 local system = require("System")
@@ -14,7 +17,7 @@ local stran = 1
 ---------------------------------------------------------------------------------
 
 -- Создание 2-х окошек
-local workspace, window, menu = system.addWindow(GUI.filledWindow(1, 1, 60, 25, 0xE1E1E1))
+local workspace, window, menu = system.addWindow(GUI.filledWindow(1, 1, 70, 25, 0xE1E1E1))
 local workspace2, window2 = system.addWindow(GUI.filledWindow(65, 1, 50, 45, 0xCC9280))
 
 
@@ -22,13 +25,13 @@ local workspace2, window2 = system.addWindow(GUI.filledWindow(65, 1, 50, 45, 0xC
 -- Контейнеры. Разставление кнопок, полосок, ой короче всёй хуйни
 local layout = window:addChild(GUI.layout(1, 12, 52, 30, 1, 1))
 local textloy = window:addChild(GUI.layout(8, 2, 30, 4, 1, 1))
-local inputloy = window:addChild(GUI.layout(21, 6, 30, 5, 1, 1))
-local textinputl = window:addChild(GUI.layout(1, 6, 29, 5, 1, 1))
+local inputloy = window:addChild(GUI.layout(16, 6, 48, 5, 1, 1))
+local textinputl = window:addChild(GUI.layout(1, 6, 19, 5, 1, 1))
 local buttonloy = window:addChild(GUI.layout(17, 11, 38, 14, 1, 1))
 local textholst = window:addChild(GUI.layout(4, 15, 17, 6, 1, 1))
-local strelka1 = window:addChild(GUI.layout(45, 2, 5, 3, 1, 1))
-local strelka2 = window:addChild(GUI.layout(50, 2, 5, 3, 1, 1))
-local textnstrel = window:addChild(GUI.layout(41, 1, 16, 3, 1, 1))
+local strelka1 = window:addChild(GUI.layout(55, 2, 5, 3, 1, 1))
+local strelka2 = window:addChild(GUI.layout(60, 2, 5, 3, 1, 1))
+local textnstrel = window:addChild(GUI.layout(51, 1, 16, 3, 1, 1))
 local layout2 = window2:addChild(GUI.layout(1, 1, window2.width, window2.height, 1, 1))
 
 -- Приведствие твоей папочки
@@ -56,7 +59,7 @@ local function str2(textstr2)
 return strelka2:addChild(GUI.roundedButton(1, 1, 3, 1, 0xD2D2D2, 0x696969, 0x4B4B4B, 0xF0F0F0, textstr2))
 end
 
-local namefile = inputloy:addChild(GUI.input(15, 21, 30, 1, 0xEEEEEE, 0x555555, 0x999999, 0xFFFFFF, 0x2D2D2D, "MyBook", "Имя книги"))
+local namefile = inputloy:addChild(GUI.input(15, 21, 48, 1, 0xEEEEEE, 0x555555, 0x999999, 0xFFFFFF, 0x2D2D2D, "MyBook", "Имя книги"))
 
 -- номер страницы
 local coustr = textnstrel:addChild(GUI.text(1, 1, 0x4B4B4B, "Cтраница: " .. stran))
@@ -93,7 +96,7 @@ end
 local codeView = layout2:addChild(GUI.codeView(2, 2, 0, 0, 1, 1, 1, scrol, {}, GUI.LUA_SYNTAX_PATTERNS, GUI.LUA_SYNTAX_COLOR_SCHEME, true, lines))
 
 -- действия кнопок и прочей хуйни которая меня не ебёт
-local lable = inputloy:addChild(GUI.input(15, 15, 30, 1, 0xEEEEEE, 0x555555, 0x999999, 0xFFFFFF, 0x2D2D2D, textzg, "Напишите сюда текст"))
+local lable = inputloy:addChild(GUI.input(15, 15, 48, 1, 0xEEEEEE, 0x555555, 0x999999, 0xFFFFFF, 0x2D2D2D, textzg, "Напишите сюда текст"))
 addButton("Записать изменения.txt").onTouch = function()
   if #lable.text > 0 then
     --GUI.alert(lable.text, " - этот текст был сохранён в файл")
